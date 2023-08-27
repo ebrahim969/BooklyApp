@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../constants.dart';
+import '../constants.dart';
 import 'text_widget.dart';
 class MyButtom extends StatelessWidget {
   const MyButtom({super.key ,required this.onTap,this.isLoading = false});
