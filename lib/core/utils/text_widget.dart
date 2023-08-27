@@ -9,7 +9,7 @@ Widget textWidget(
     TextAlign? tetxAlign = TextAlign.center}) {
   return Text(
     txt,
-    style: GoogleFonts.poppins(
+    style: GoogleFonts.montserrat(
         fontSize: fontsize, fontWeight: fontWeight, color: color),
     textAlign: tetxAlign,
   );
