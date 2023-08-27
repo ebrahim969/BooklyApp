@@ -1,4 +1,4 @@
-import 'package:bookly_app/utils/text_widget.dart';
+import 'package:bookly_app/core/utils/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class SlidingTextAnimated extends StatelessWidget {

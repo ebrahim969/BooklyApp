@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/assets.dart';
+import '../../../../../core/utils/assets.dart';
 
 class CustomListViewItem extends StatelessWidget {
   const CustomListViewItem ({super.key});
