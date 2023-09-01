@@ -14,7 +14,7 @@ class SimillarListViewBooks extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           itemCount: 5,
           itemBuilder: (context, index) {
-            return const CustomBookItem();
+            return const CustomBookItem(image: "https://th.bing.com/th/id/OIP.JrR4MWDeoUEZH8jwmknP_wHaEm?pid=ImgDet&rs=1",);
           }),
     );
   }
