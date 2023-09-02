@@ -12,5 +12,7 @@ Widget textWidget(
     style: GoogleFonts.caudex(
         fontSize: fontsize, fontWeight: fontWeight, color: color),
     textAlign: tetxAlign,
+    maxLines: 2,
+    overflow: TextOverflow.ellipsis,
   );
 }
