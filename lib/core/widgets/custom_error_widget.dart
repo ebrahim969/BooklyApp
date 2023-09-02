@@ -8,7 +8,7 @@ class CustomErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Text(errMessage, style: Styles.textStyle14,)
+      child: Center(child: Text(errMessage, style: Styles.textStyle14,))
     );
   }
 }

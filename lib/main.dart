@@ -1,5 +1,4 @@
 import 'package:bookly_app/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +6,7 @@ import 'core/utils/app_router.dart';
 import 'core/utils/constants.dart';
 import 'core/utils/service_locator.dart';
 import 'features/home/data/repos/home_repo_implement.dart';
+import 'features/home/presentation/view_models/cubit/newest_books_cubit.dart';
 
 void main() {
   setupServiceLocator();
