@@ -15,7 +15,7 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        GoRouter.of(context).push(AppRouter.kBookDetails);
+        GoRouter.of(context).push(AppRouter.kBookDetails, extra: book);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),

@@ -1,5 +1,9 @@
+import 'package:bookly_app/core/widgets/circular_indecator.dart';
+import 'package:bookly_app/core/widgets/custom_error_widget.dart';
+import 'package:bookly_app/features/home/presentation/view_models/cubit/similar_book_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 class SimillarListViewBooks extends StatelessWidget {
@@ -7,15 +11,29 @@ class SimillarListViewBooks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: Get.height * .15,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return const CustomBookItem(image: "https://th.bing.com/th/id/OIP.JrR4MWDeoUEZH8jwmknP_wHaEm?pid=ImgDet&rs=1",);
-          }),
+    return BlocBuilder<SimilarBookCubit, SimilarBookState>(
+      builder: (context, state) {
+        if (state is SimilarBookSuccess) {
+          return SizedBox(
+            height: Get.height * .15,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return const CustomBookItem(
+                    image:
+                        "https://th.bing.com/th/id/OIP.JrR4MWDeoUEZH8jwmknP_wHaEm?pid=ImgDet&rs=1",
+                  );
+                }),
+          );
+        } else if (state is SimilarBookFailure) {
+          return CustomErrorWidget(errMessage: state.errMessage);
+        } else
+        {
+          return const CircularIndecator();
+        }
+      },
     );
   }
 }
