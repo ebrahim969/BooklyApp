@@ -2,7 +2,6 @@ import 'package:bookly_app/core/widgets/circular_indecator.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'best_seller_listview_item.dart';
 
