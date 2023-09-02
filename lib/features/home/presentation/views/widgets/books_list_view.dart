@@ -5,6 +5,9 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/app_router.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key});
@@ -23,7 +26,11 @@ class BooksListView extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 itemCount: state.books.length,
                 itemBuilder: (context, index) {
-                  return CustomBookItem(image: state.books[index].volumeInfo.imageLinks.thumbnail,);
+                  return InkWell(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kBookDetails, extra: state.books[index]);
+                    },
+                    child: CustomBookItem(image: state.books[index].volumeInfo.imageLinks?.thumbnail??"",));
                 }),
           ),
         );

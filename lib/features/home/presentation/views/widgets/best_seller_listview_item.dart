@@ -23,7 +23,7 @@ class BestSellerListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              CustomBookItem(image: book.volumeInfo.imageLinks.thumbnail),
+              CustomBookItem(image: book.volumeInfo.imageLinks?.thumbnail ?? ''),
               const SizedBox(
                 width: 30,
               ),

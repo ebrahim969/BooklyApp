@@ -11,14 +11,14 @@ class BooksActions extends StatelessWidget {
       children: const [
          Expanded(
           child: CustomButton(
-            text: "399",
+            text: "Free",
             backgroundColor: Colors.white,
             textColor: Colors.black,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(12), bottomLeft: Radius.circular(12)),
           ),),
           Expanded(
           child: CustomButton(
-            text: "Free Preview",
+            text: "Preview",
             backgroundColor: Colors.amber,
             textColor: Colors.white ,
             borderRadius: BorderRadius.only(topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
