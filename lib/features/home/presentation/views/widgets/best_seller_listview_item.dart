@@ -10,11 +10,11 @@ import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key, required this.book});
- final BookModel book;
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetails, extra: book);
       },
       child: Padding(
@@ -23,7 +23,8 @@ class BestSellerListViewItem extends StatelessWidget {
           height: 125,
           child: Row(
             children: [
-              CustomBookItem(image: book.volumeInfo.imageLinks?.thumbnail ?? ''),
+              CustomBookItem(
+                  image: book.volumeInfo.imageLinks?.thumbnail ?? ''),
               const SizedBox(
                 width: 30,
               ),
@@ -38,16 +39,30 @@ class BestSellerListViewItem extends StatelessWidget {
                           fontsize: 20,
                           tetxAlign: TextAlign.start),
                     ),
-                    const SizedBox(height: 3,),
-                    Text(book.volumeInfo.authors![0], style: Styles.textStyle14,),
-                   const SizedBox(height: 3,),
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     children: [
-                       Text("Free", style: Styles.textStyle14.copyWith(fontWeight: FontWeight.bold, color: Colors.amber),),
-                       const BookRateing(mainAxisAlignment: MainAxisAlignment.start,)
-                     ],
-                   ),
+                    const SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      book.volumeInfo.authors![0],
+                      style: Styles.textStyle14.copyWith(color: Colors.orange[700]),
+                    ),
+                    const SizedBox(
+                      height: 3,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Free",
+                          style: Styles.textStyle14.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueAccent),
+                        ),
+                        const BookRateing(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                        )
+                      ],
+                    ),
                   ],
                 ),
               )
@@ -58,5 +73,3 @@ class BestSellerListViewItem extends StatelessWidget {
     );
   }
 }
-
-

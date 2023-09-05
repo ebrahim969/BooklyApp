@@ -13,11 +13,11 @@ class BookRateing extends StatelessWidget {
       children:const [
          Icon(FontAwesomeIcons.solidStar, color: Color(0xffFFDD4F), size: 17,),
          SizedBox(width: 6.3,),
-        Text("4.8", style: Styles.textStyle16,),
+        Text("0", style: Styles.textStyle16,),
         SizedBox(width: 5,),
         Opacity(
           opacity: .7,
-          child: Text("(2390)", style: Styles.textStyle14)),
+          child: Text("(0)", style: Styles.textStyle14)),
       ],
     );
   }

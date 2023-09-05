@@ -1,9 +1,6 @@
-import 'dart:developer';
-
+import 'package:bookly_app/core/utils/function/launcher_fun.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '../../../../../core/widgets/custom_button.dart';
 
 class BooksActions extends StatelessWidget {
@@ -25,20 +22,26 @@ class BooksActions extends StatelessWidget {
           child: CustomButton(
             onPressed: () async
             {
-              Uri url = Uri.parse(bookModel.volumeInfo.previewLink!);
-             if (await canLaunchUrl(url)) { 
-                await launchUrl(url);
-              }else
-              {
-                log("Can't launch url");
-              }
+              launcherCustomUrl(context, bookModel.volumeInfo.previewLink!);
             },
-            text: "Preview",
+            text: getTxet(bookModel),
             backgroundColor: Colors.amber,
             textColor: Colors.white ,
             borderRadius:const BorderRadius.only(topRight: Radius.circular(12), bottomRight: Radius.circular(12)),
           ),),
       ],
     );
+  }
+  
+ String  getTxet(BookModel bookModel) 
+  {
+    if((bookModel.volumeInfo.previewLink == null))
+    {
+      return "Can't preview";
+    }
+    else
+    {
+      return"Preview";
+    }
   }
 }
